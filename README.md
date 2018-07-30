@@ -25,7 +25,7 @@ module.exports = {
   networks: {
     development: {
         host: '127.0.0.1',
-        port: 8545,
+        port: 7545,
         network_id: '*', // Match any network id
     }
 },
@@ -37,6 +37,18 @@ module.exports = {
   * [erc721.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/erc721.sol)
   * [ownable.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/ownable.sol)
   * [safemath.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/safemath.sol)
+* Since we have smart contracts in place we need to migrate these contract.But before we proceed to this step we need to install and run [**ganache**](https://github.com/trufflesuite/ganache-cli) in background.
+* After installing ganache and running in backgroud navigate to folder **migrations** and create a file named ```2_deploy_contracts.js``` and add the following code in it.[link](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/tree/master/migrations) 
+```javascript
+var Tajmahal = artifacts.require("Tajmahal");
+
+module.exports = function(deployer) {
+  deployer.deploy(Tajmahal);
+}
+```
+* After following the above steps hit ```truffle migrate``` (make sure ganache is running in background).
+* In Ganache, note that the state of the blockchain has changed. The blockchain now shows that the current block, previously 0, is now 4. In addition, while the first account originally had 100 ether, it is now lower, due to the transaction costs of migration.
+* Hola your contract is deployed on local blockchain!!! But we still have long way to go.
 
 
 
