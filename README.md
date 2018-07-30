@@ -18,8 +18,8 @@ We would also be needing ganache or testrpc for local deployment.
 * In __truffle.js__ replace the stuff with following code. 
 ```javascript
 // Allows us to use ES6 in our migrations and tests.
-require('babel-register')
-require('babel-polyfill')
+// require('babel-register')
+// require('babel-polyfill')
 
 module.exports = {
   networks: {
@@ -31,6 +31,13 @@ module.exports = {
 },
 };
 ```
+* Now add the following contracts in the **contracts** directory and then hit ```truffle compile```
+  * I have created Tajmahal.sol (because written in soilidty) that contains buisness logic.According to this contract ONLY ONE Tajmahal can be created.It will be non fungible an unique as it implement erc721 standards.Since we do not want some overflow in our arithmetic operations we have used __safemath.sol__ library from openzepplin.__ownable.sol__ is again from openzepplin for restricting use of some contract functions to owners.
+  * [Tajmahal.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/Tajmahal.sol)
+  * [erc721.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/erc721.sol)
+  * [ownable.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/ownable.sol)
+  * [safemath.sol](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/contracts/safemath.sol)
+
 
 
  
