@@ -71,6 +71,17 @@ use truffle also to deploy our network.In this i will be discussing deployment o
   * ![wallet](https://cdn-images-1.medium.com/max/800/1*8VEep9up0Y40S6-yO_OlPw.png)
 * Request Free ether from here or here. Paste the copied account address in text box and click on send me 1 test ether.
   * ![wallet](https://cdn-images-1.medium.com/max/800/1*AjharO8gF4Xzr9ufy4iYLg.png)
+* you got a ether !!!!
+  * ![wallet](https://cdn-images-1.medium.com/max/800/1*TxIvieOkIaRGDIv2ZMShYw.png)
+* now, we have to the paste contracts in remix IDE [remix](http://remix.ethereum.org/)
+* todo
+## Frontend for smart contract and interaction with it.
+Since we have made and deployed our smart contracts,we need to put a pretty face to it so that normal user can interact with it.
+* Make a folder called __frontend__ in the directory.
+* Make a file called index.html and add the following code from here.
+
+
+
 
 
 
