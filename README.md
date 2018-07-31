@@ -74,11 +74,48 @@ use truffle also to deploy our network.In this i will be discussing deployment o
 * you got a ether !!!!
   * ![wallet](https://cdn-images-1.medium.com/max/800/1*TxIvieOkIaRGDIv2ZMShYw.png)
 * now, we have to the paste contracts in remix IDE [remix](http://remix.ethereum.org/)
-* todo
+* click on Run. Select Injected Web 3 Ropsten under environment and the account in Metamask is shown here under Account with balance ether as well.
 ## Frontend for smart contract and interaction with it.
 Since we have made and deployed our smart contracts,we need to put a pretty face to it so that normal user can interact with it.
 * Make a folder called __frontend__ in the directory.
-* Make a file called index.html and add the following code from here.
+* Make a file called __index.html__ in frontend folder and add the following code from [here](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/frontend/index.html).
+* You can add following Tajmahal images from [here](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/tree/master/frontend) to your frontend folder.
+* Now we have frontend in place,we need this frontend to interact with our smart contract.For this we require __web3js__
+* ```<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>``` code imports web3js in html file.
+* Now lets ponder over following snippet in index.html file.
+```javascript
+    <script>
+
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        }
+
+    </script>
+```
+* It's saying that if web3 is not undefined, then we'll use that as our provider. If it's undefined (else), we can manually specify the provider ourselves.
+* You may be wondering, how would web3 be defined? Well, if you're using the Chrome extension MetaMask (which we will use later in this course) or an Ethereum browser like Mist, the provider is automatically injected.
+* Now go back to Remix IDE, click on the Compile tab and click Details. Scroll down until you see the Interface - ABI section and click the copy icon as shown below:
+  * ![ABI](https://s3.amazonaws.com/coursetro/posts/content_images/02-02-1-1508872208902.png)
+* In index.html in the following code snippet paste your contract adsress and abi copied in above step.
+```javascript
+    <script>
+
+        // Previous if/else statement removed for brevity
+
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        //paste your abi function here
+        var TajmahalContract = web3.eth.contract(YOUR ABI);
+        
+        //paste your contract address here.
+        var Tajmahal = TajmahalContract.at('PASTE CONTRACT ADDRESS HERE');
+        console.log(Tajmahal);
+
+    </script>
+```
 
 
 
