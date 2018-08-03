@@ -1,5 +1,10 @@
+
+<p align="center">
+  <img width=1000" height="350" src="https://media.giphy.com/media/11MKLWSDvMVSp2/giphy.gif">
+</p>
+
 # Let's put Taj Mahal on sale !! 
-Yes i am not out of my mind and it is completely possible with the help of blockchain technology.Of course Blockchian will protect us from intervention of third parties ie government,bank and police.
+Yes i am not out of my mind and it is completely possible with the help of blockchain technology.Of course Blockchian will protect us from intervention of third parties.
 What we will be building is a digital asset (ERC721 token) on blockchain with the help of solidity(by writing smart contracts).We will then use IPFS to deploy our Dapp.
 
 ## Setup Environment 
@@ -74,12 +79,22 @@ use truffle also to deploy our network.In this i will be discussing deployment o
 * you got a ether !!!!
   * ![wallet](https://cdn-images-1.medium.com/max/800/1*TxIvieOkIaRGDIv2ZMShYw.png)
 * now, we have to the paste contracts in remix IDE [remix](http://remix.ethereum.org/)
-* click on Run. Select Injected Web 3 Ropsten under environment and the account in Metamask is shown here under Account with balance ether as well.
+* ![step11](https://github.com/phunsukwangdu/image/blob/master/step11.png)
+* click on Run. Select Injected Web 3 Ropsten under environment and the account in Metamask is shown here under Account with balance ether as well.Hit the deploy button.
+* ![step1](https://github.com/phunsukwangdu/image/blob/master/step1.png)
+* Metamask will pop up with transaction details.
+* ![step2](https://github.com/phunsukwangdu/image/blob/master/step3.png)
+* Now enter the gass price.Higher you pay faster it gets executed.
+* ![step3](https://github.com/phunsukwangdu/image/blob/master/step4.png)
+* After transaction is completed you will be directed with etherscan link.
+* ![step4](https://github.com/phunsukwangdu/image/blob/master/step5.png)
+* Important ! please note down contract address and abi as they would be required for frontend integration.
 ## Frontend for smart contract and interaction with it.
 Since we have made and deployed our smart contracts,we need to put a pretty face to it so that normal user can interact with it.
 * Make a folder called __frontend__ in the directory.
 * Make a file called __index.html__ in frontend folder and add the following code from [here](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/blob/master/frontend/index.html).
 * You can add following Tajmahal images from [here](https://github.com/phunsukwangdu/ERC721-fullstack-Dapp-Tutorial/tree/master/frontend) to your frontend folder.
+* ![frontend](https://github.com/phunsukwangdu/image/blob/master/cryptotajh.png)
 * Now we have frontend in place,we need this frontend to interact with our smart contract.For this we require __web3js__
 * ```<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>``` code imports web3js in html file.
 * Now lets ponder over following snippet in index.html file.
