@@ -131,6 +131,25 @@ Since we have made and deployed our smart contracts,we need to put a pretty face
 
     </script>
 ```
+## Deployment to IPFS
+* Install IPFS as described at https://ipfs.io/docs/install/
+* Run IPFS daemons ```ipfs daemon```
+* then run ```ipfs add -r frontend/```
+* You should see something like this
+```
+added QmeYxwj4CwCeGVhwi3xLrmBZUUFQdftshSiGLrTdTnWEVV frontend
+```
+* The hash on the last line is the root of your site, you can visit is by opening ```https://gateway.ipfs.io/ipfs/<your hash here>.``` So the example site is at ```https://gateway.ipfs.io/ipfs/QmWrrQHELjXW41tkM2RUCGGyyHqKzauCZMSvcxa3271GP6/```
+* Publish to IPNS ```ipfs name publish <your site hash>```
+* That will return your peerID and the hash you are publishing to it. You can confirm by running ```ipfs name resolve <peerId>``` or by viewing ```https://gateway.ipfs.io/ipns/<peerID>``` (notice the directory is ipns not ipfs).
+* Your site is deployed !!!
+
+#Hola !! you completed the full stack ERC721 tutorial !!
+
+
+
+
+
 
 
 
