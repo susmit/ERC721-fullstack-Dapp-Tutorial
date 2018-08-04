@@ -6,6 +6,32 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+   <script>
+
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        }
+
+    </script>
+
+ <script>
+
+        // Previous if/else statement removed for brevity
+
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        //paste your abi function here
+        var TajmahalContract = web3.eth.contract(YOUR ABI);
+        
+        //paste your contract address here.
+        var Tajmahal = TajmahalContract.at('PASTE CONTRACT ADDRESS HERE');
+        console.log(Tajmahal);
+
+    </script>
 <style>
 body {font-family: "Raleway", Arial, sans-serif}
 .w3-row img {margin-bottom: -8px}
@@ -46,6 +72,12 @@ body {font-family: "Raleway", Arial, sans-serif}
     <p style="margin:auto;width:60%" >Crypto TajMahal is ERC721 crypto token powered by etherium blockchain.Only one such TajMahal will exist (guranteed by Etherium Blockchain ) and only one would be the owner.Anyone who pays the price of Tajmahal becomes the owner of this  Tajmahal.</p>
 
     <p class="w3-large w3-text-pink">Do not hesitate to buy TajMahal !</p>
+    <button id="button">Buy Tajmahal</button>
+    <script>
+    	$("#button").click(function() {
+            Tajmahal.buyTajmahal();
+        });
+    </script>>
   <br>
   <p>Developed by <a href="https://www.linkedin.com/in/susmit-lavania-4b9558107/" target="_blank" class="w3-hover-text-green">Susmit</a></p>
 </footer>
