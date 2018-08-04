@@ -144,7 +144,7 @@ added QmeYxwj4CwCeGVhwi3xLrmBZUUFQdftshSiGLrTdTnWEVV frontend
 * That will return your peerID and the hash you are publishing to it. You can confirm by running ```ipfs name resolve <peerId>``` or by viewing ```https://gateway.ipfs.io/ipns/<peerID>``` (notice the directory is ipns not ipfs).
 * Your site is deployed !!!
 
-#Hola !! you completed the full stack ERC721 tutorial !!
+# Hola !! you completed the full stack ERC721 tutorial !!
 
 
 
